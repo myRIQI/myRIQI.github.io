@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head>
+    <title>  | Debian9.6部署Docker，并运行Nginx与MongoDB容器 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="一位野生码农">
+    
+    <link rel="stylesheet"
+          href="/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css"
+          integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.9755453ffb7bc4cd220f86ebb5922107b49f193cc62fc17e9785d27b33a8bf5b.css"
+        integrity="sha256-l1VFP/t7xM0iD4brtZIhB7SfGTzGL8F&#43;l4XSezOov1s="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <link rel="canonical" href="/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js"
+                integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Debian9.6部署Docker，并运行Nginx与MongoDB容器"/>
+<meta name="twitter:description" content="使用Docker 可以减少对宿主机器运行环境的依赖，降低因为环境不同带来运行环境问题。
+1、首先修改APT源 使用指令打开APT源文件
+vi /etc/apt/sources.list
+ps: 系统刚安装好后默认不支持https协议的，先添加支持http协议的镜像地址，例如中科大镜像地址：
+deb http://mirrors.ustc.edu.cn/debian jessie main contrib non-free deb-src http://mirrors."/>
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">I&#39;m W.Z</a></h3>
+            <div class="description">
+                <p>一位野生码农</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/myRIQI" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:i5china@outlook.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;   2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">博客</a></li>
+        
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Debian9.6部署Docker，并运行Nginx与MongoDB容器</h3>
+                
+            </div>
+
+            <p>使用Docker 可以减少对宿主机器运行环境的依赖，降低因为环境不同带来运行环境问题。</p>
+<h2 id="1首先修改apt源">1、首先修改APT源</h2>
+<p>使用指令打开APT源文件</p>
+<p><code>vi  /etc/apt/sources.list</code></p>
+<p>ps: 系统刚安装好后默认不支持https协议的，先添加支持http协议的镜像地址，例如中科大镜像地址：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">deb http://mirrors.ustc.edu.cn/debian jessie main contrib non-free
+deb-src http://mirrors.ustc.edu.cn/debian jessie main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian jessie-proposed-updates main contrib non-free
+deb-src http://mirrors.ustc.edu.cn/debian jessie-proposed-updates main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian jessie-updates main contrib non-free
+deb-src http://mirrors.ustc.edu.cn/debian jessie-updates main contrib non-free
+</code></pre></div><p><code>apt update</code></p>
+<p><code>apt install apt-transport-https</code></p>
+<p>再次编辑sources.list文件替换镜像地址，下面提供一个清华大学APT源</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
+</code></pre></div><p><!-- raw HTML omitted -->以上地址不保证永远有效，失效时自行搜索可用镜像地址，保存后执行。<!-- raw HTML omitted --></p>
+<p>接着再更新缓存 <code>apt-get update</code></p>
+<h2 id="2安装docker依赖软件包">2、安装Docker依赖软件包</h2>
+<p><code>apt install  ca-certificates curl gnupg2(如果出现依赖冲突，可跳过不装) software-properties-common</code></p>
+<h2 id="3官方docker存储库的gpg密钥添加">3、官方Docker存储库的GPG密钥添加</h2>
+<p><code>curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -</code></p>
+<h2 id="4docker存储库添加到apt源">4、Docker存储库添加到APT源</h2>
+<p><code>add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable&quot;</code></p>
+<h2 id="5再更新一次apt源缓存">5、再更新一次APT源缓存</h2>
+<p><code>apt-get update</code></p>
+<h2 id="6以下指令是确保你是从docker-repo安装而不是默认的从debian-repo安装">6、以下指令是确保你是从Docker repo安装而不是默认的从Debian repo安装</h2>
+<p><code>apt-cache policy docker-ce</code></p>
+<h2 id="7执行安装docer-ce社区版指令">7、执行安装docer-ce社区版指令</h2>
+<p><code>apt-get install docker-ce</code></p>
+<p>安装之后使用命令
+<code>sudo systemctl status docker</code></p>
+<p>来检查docker服务是否已经正常运行，以上就是整个docker安装方法。</p>
+<p>**安装过程中的问题记录
+Docker安装后会出现了Docker虚拟网卡地址与，宿主机器所处网络环境发生冲突，导致宿主机器无法被外网访问和访问外网，解决办法如下：
+1、宿主机器改成静态IP
+2、cd  /etc/docker/  路径下，编辑daemon.json 文件，添加：
+{&ldquo;bip&rdquo;:&ldquo;192.168.0.1/16&rdquo;}
+改成与宿主机器不同的网段与网关，然后退出保存，重启docker服务
+备注：如果是Nginx容器，nginx的default 配置文件需要修改监听本地地址</p>
+<hr>
+<h1 id="docker中部署并运行nginx容器">Docker中部署并运行Nginx容器</h1>
+<p>Docker 会默认使用桥接路由，所以其 IP 和宿主机的 IP 位于同一 IP 段，并且默认宿主机的 IP 为第一个，即如果 Docker 的 IP 为 10.1.0.2, 则可以通过 访问 10.1.0.1 访问到宿主机
+nginx 不能使用镜像导出载入的方式备份，只能从dockerfile build，因为default.conf 中5000端口IP地址会变更</p>
+<h3 id="1-首先创建dockerfile">1、 首先创建Dockerfile</h3>
+<ul>
+<li>FROM nginx:latest</li>
+<li>RUN mkdir -p /data</li>
+<li>COPY default.conf /etc/nginx/conf.d</li>
+</ul>
+<h3 id="2-生成镜像">2、 生成镜像</h3>
+<p><code>docker build -t nginx . </code> 注：结尾处有一个英文句号</p>
+<h3 id="3-创建容器">3、 创建容器</h3>
+<p><code>docker run -p  80:80 --name nginxContainer  -v /opt:/opt  -v /data:/data  -v  /home/RecordFiles:/home/RecordFiles  -d nginx</code>
+这条指令包中做了以下操作</p>
+<ul>
+<li>1、将容器80端口映射到宿主机器80端口上</li>
+<li>2、指定了容器名称</li>
+<li>3、映射容器文件夹 opt 路径到宿主机器 opt 路径</li>
+<li>4、指定容器从哪个镜像文件创建</li>
+</ul>
+<hr>
+<h1 id="在docker中运行mongodb容器">在Docker中运行MongoDB容器</h1>
+<h3 id="1-创建dockerfile">1、 创建Dockerfile</h3>
+<blockquote>
+<p>FROM mongo:latest
+COPY iniMongoData.js /app/
+EXPOSE 27017
+WORKDIR /app/</p>
+</blockquote>
+<h3 id="2创建镜像">2、创建镜像</h3>
+<p><code>docker build -t mongo .</code></p>
+<h3 id="3-创建容器将数据库与日志目录都映射出来">3、 创建容器，将数据库与日志目录都映射出来</h3>
+<p><code>docker run --name mtswebDB -v /home/mongo/db:/data/db  -v /home/mongo/log:/var/log/mongodb -d -p 27017:27017 </code></p>
+<hr>
+<h2 id="docker-常用命令">Docker 常用命令</h2>
+<h3 id="1镜像下载">1、镜像下载</h3>
+<p><code>docker pull &lt;镜像名称&gt;</code></p>
+<h3 id="2本地镜像查看">2、本地镜像查看</h3>
+<p><code>docker image list</code></p>
+<h3 id="3导出本地镜像">3、导出本地镜像</h3>
+<p><code>docker save -o mongo.tar&lt;定义镜像文件名称&gt; mongo&lt;本地镜像&gt; ##-o:</code></p>
+<h3 id="4载入本地镜像">4、载入本地镜像</h3>
+<p><code>docker load --input mongo.tar&lt;载入的镜像文件名称&gt; 或 docker load &lt; mongo.tar</code></p>
+<h3 id="5停止容器">5、停止容器</h3>
+<p><code>docker stop &lt;容器名称&gt;</code></p>
+<h3 id="6将容器commit成为一个镜像">6、将容器commit成为一个镜像</h3>
+<p><code>docker commit &lt;容器名称&gt;   &lt;镜像名称&gt;</code></p>
+<h3 id="7查看容器信息">7、查看容器信息</h3>
+<p><code>docker inspect &lt;容器名称&gt;</code></p>
+<h3 id="8容器中文件拷贝到宿主机器">8、容器中文件拷贝到宿主机器</h3>
+<p><code>docker cp  mtswebNG:/etc/nginx/nginx.conf   /home/</code></p>
+<h3 id="9宿主机器中的文件拷贝到容器中">9、宿主机器中的文件拷贝到容器中</h3>
+<p><code>docker cp /home/AAA.md (宿主机器)   mtswebNG:/etc/nginx/    (容器路径)</code></p>
+<h3 id="10在宿主机器中修改容器中配置文件后使其生效">10、在宿主机器中修改容器中配置文件后使其生效</h3>
+<p><code>dokcer exec -it docker_nginx nginx -s reload 或者 dokcer exec -it docker_nginx bash 进入docker容器，nginx -s reload</code></p>
+<h3 id="11设置某个容器在停止时自动重启可用作开机启动容器">11、设置某个容器在停止时自动重启，可用作开机启动容器</h3>
+<p><code>docker update --restart=always &lt;容器名称&gt;</code></p>
+<h3 id="12设置某个容器延时重启">12、设置某个容器延时重启</h3>
+<p><code>docker run --restart=on-failure:10 &lt;容器名称&gt;</code></p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js"
+        integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js"
+        integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

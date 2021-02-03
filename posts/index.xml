@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Website of W.Z</title>
-    <link>/posts/</link>
+    <link>https://myriqi.github.io/posts/</link>
     <description>Recent content in Posts on Website of W.Z</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Jan 2021 21:21:42 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 21:21:42 +0800</lastBuildDate><atom:link href="https://myriqi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JAVA入门知识梳理 01</title>
-      <link>/posts/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86__01/</link>
+      <link>https://myriqi.github.io/posts/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86__01/</link>
       <pubDate>Sun, 31 Jan 2021 21:21:42 +0800</pubDate>
       
-      <guid>/posts/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86__01/</guid>
+      <guid>https://myriqi.github.io/posts/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86__01/</guid>
       <description>maven 是什么？ 一个java中第三方jar包的管理工具。其它语言中也有类似工具，例如当前我主力使用C#中的Nuget(微软官方出品)，以及nodejs中的npm、yarn等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。
 ps: 我使用IntelliJ IDEA 工具创建了我的第一个maven demo 工程，明白了如何配置本地路径下maven,并修改setting.</description>
     </item>
     
     <item>
       <title>Debian9.6部署Docker，并运行Nginx与MongoDB容器</title>
-      <link>/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/</link>
+      <link>https://myriqi.github.io/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Tue, 30 Jul 2019 21:21:42 +0800</pubDate>
       
-      <guid>/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/</guid>
+      <guid>https://myriqi.github.io/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/</guid>
       <description>使用Docker 可以减少对宿主机器运行环境的依赖，降低因为环境不同带来运行环境问题。
 1、首先修改APT源 使用指令打开APT源文件
 vi /etc/apt/sources.list
@@ -32,10 +32,10 @@ deb http://mirrors.ustc.edu.cn/debian jessie main contrib non-free deb-src http:
     
     <item>
       <title>同事小拿</title>
-      <link>/posts/%E5%90%8C%E4%BA%8B%E5%B0%8F%E6%8B%BF/</link>
+      <link>https://myriqi.github.io/posts/%E5%90%8C%E4%BA%8B%E5%B0%8F%E6%8B%BF/</link>
       <pubDate>Sat, 27 Jul 2019 21:21:42 +0800</pubDate>
       
-      <guid>/posts/%E5%90%8C%E4%BA%8B%E5%B0%8F%E6%8B%BF/</guid>
+      <guid>https://myriqi.github.io/posts/%E5%90%8C%E4%BA%8B%E5%B0%8F%E6%8B%BF/</guid>
       <description>同事刘小拿，公司开发团队骨干，活好手艺巧，小 commit 一条一条的整整齐齐板板正正 人看起来是一腼腆青涩少年，一身格子一副眼镜，平常见人不打招呼总抵着头，一起吃饭也不爱参加 以为他是内向不爱讲话，可你要被他发现 commit 了 tab 他能过来把你桌子诌了 “说了多少次？！空格！四个空格！！。。。TMD ！” 拂袖愤然而去 然后你出于对同事的理解，对代码的尊重，再次 commit 了一次 tab 修正为四空格的版本 结果看他好像是更气了，坐在工位上对着版本列表抓耳挠腮唉声叹气，好像一个花姑娘头次遭了玷污 就是这么一个对工作对代码严谨认真的同事，在领导那里的评价却不怎么好，为什么？ “偷懒” 刘小拿的开发机是 MBP，测试 PC 是 Win10，里面跑些虚拟机和他的测试用例 然后，几乎每周都能有几次，你看他坐在工位上刷手机，伸着个腿，椅子转来转去，有时候一刷一上午，下午回来甚至还接着刷 领导也不好直接问，其他同事只好拐着弯的说：“咱们上次说的模块啥时候能出？” “等等把，我这系统升级呢” 抬头一看，不是 Win10 大蓝屏就是 Mac 转菊花 公司网慢，有时候这一转就不知要转到何年何月，你看着干着急，他却悠然自得的刷手机：“不是我不想干，就怪这网太慢！” 作为公司懂点技术的老员工，仗着胆子问 “这开发机有必要一直升级吗？” 小拿听到这句眼立刻圆了 “当然了！” “为啥啊？系统能稳定运行开发 IDE 不就得了？” “安全啊！你知道去年心血、SMB 漏洞多严重吗？不安装系统补丁不完了？” “我 WIN7 从不升级，没有完啊。。。” “你。。。。切” 小拿鼻子里鄙夷的切了一声，继续拿起手机，伸着腿把转椅背朝我 “要不装个杀毒软件？” 我对着小拿的后脑勺说 这话说完我就后悔的想抽自己嘴巴子，小拿的机器很干净，系统中仅跑开发环境，并且经常喷各种杀毒软件，说这些都是垃圾 小拿果然没有回答我 如果光是系统升级也就算了，小拿会执着的升级他开发机 IDE 和所有插件的版本，有时候 IDE 一个大版本升级，或者一个插件没整利索直接删了 IDE 重装，然后重新部署开发环境，那又是一上午没了 不用问，自然也是为了“安全”，自然也是有他充份的道理 实话说小拿不是不自觉的人，他并没有因为自己的软件升级导致耽误工作，虽看起来“偷懒”，但他总会按时提交自己的代码 但他另外一个对于升级的执着，却当真、切实的影响了工作，甚至影响了公司的收益了 他会升级生产环境系统，和生产环境中 Server 端软件 “发个公告，今天停机维护，嗯。。。。3 个小时吧” “运行的好好的，为什么？” “ Ubuntu 出 16.</description>
     </item>
     

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>index on Website of W.Z</title>
-    <link>/tags/index/</link>
+    <link>https://myriqi.github.io/tags/index/</link>
     <description>Recent content in index on Website of W.Z</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://myriqi.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Posts</title>
-      <link>/posts/</link>
+      <link>https://myriqi.github.io/posts/</link>
       <pubDate>Sun, 31 Jan 2021 21:21:42 +0800</pubDate>
       
-      <guid>/posts/</guid>
+      <guid>https://myriqi.github.io/posts/</guid>
       <description></description>
     </item>
     

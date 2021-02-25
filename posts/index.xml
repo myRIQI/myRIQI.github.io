@@ -6,13 +6,25 @@
     <description>Recent content in Posts on Website of W.Z</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Jan 2021 21:21:42 +0800</lastBuildDate><atom:link href="https://myriqi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 23:43:49 +0800</lastBuildDate><atom:link href="https://myriqi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JAVA入门知识梳理 01</title>
-      <link>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8%E7%AF%87/</link>
+      <title>2020除夕夜 年终总结</title>
+      <link>https://myriqi.github.io/posts/2020%E9%99%A4%E5%A4%95%E5%A4%9C-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 11 Feb 2021 23:43:49 +0800</pubDate>
+      
+      <guid>https://myriqi.github.io/posts/2020%E9%99%A4%E5%A4%95%E5%A4%9C-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description>一年又过去了，为了纪念2020这特殊的一年，我这个“正经人”也打算写一篇年终总结了。
+这一年遇上了我这辈子目前从没遇到过的瘟疫 ===&amp;gt; 新冠肺炎。也见证了整个世界、整个国家乃至全家因此惶惶不可终日，害怕染上病毒。看来大多数人在面对病毒时，都是害怕惜命的。 我这一年，没有取得什么大的成就，只是熟练掌握了Flutter与Python 的入门知识。与姐夫、晓飞哥合作创立了道物信息技术，一切都在起点，亦如前几年一样。最喜欢的游戏也因为忙碌的日子，逐渐远离，甚至现在就像个“阳痿”的男人，偶尔有空了也提不起兴致玩上一会。
+入冬以来，长期坚持的健身也没坚持到2021，体重从168斤反弹到了190斤，看来我是个易胖体质，没有剧烈的运动，应该是不会保持瘦下来的了。
+来年，我希望我能带领道物走向巅峰，重新捡起健身，一个好的身体将催使我的头脑更新加灵活。我也就不立flg了，万一做不到就打脸了。</description>
+    </item>
+    
+    <item>
+      <title>JAVA常用开发工具梳理-入门</title>
+      <link>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 31 Jan 2021 21:21:42 +0800</pubDate>
       
-      <guid>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8%E7%AF%87/</guid>
+      <guid>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8/</guid>
       <description>maven 是什么？ 一个java中第三方jar包的管理工具。其它语言中也有类似工具，例如当前我主力使用C#中的Nuget(微软官方出品)，以及nodejs中的npm、yarn等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。
 ps: 我使用IntelliJ IDEA 工具创建了我的第一个maven demo 工程，明白了如何配置本地路径下maven,并修改setting.</description>
     </item>

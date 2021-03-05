@@ -8,13 +8,13 @@
     <language>en</language>
     <lastBuildDate>Sun, 31 Jan 2021 21:21:42 +0800</lastBuildDate><atom:link href="https://myriqi.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JAVA常用开发工具梳理-入门</title>
-      <link>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8/</link>
+      <title>JAVA常用开发工具梳理</title>
+      <link>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86/</link>
       <pubDate>Sun, 31 Jan 2021 21:21:42 +0800</pubDate>
       
-      <guid>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86-%E5%85%A5%E9%97%A8/</guid>
-      <description>maven 是什么？ 一个java中第三方jar包的管理工具。其它语言中也有类似工具，例如当前我主力使用C#中的Nuget(微软官方出品)，以及nodejs中的npm、yarn等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。
-ps: 我使用IntelliJ IDEA 工具创建了我的第一个maven demo 工程，明白了如何配置本地路径下maven,并修改setting.</description>
+      <guid>https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86/</guid>
+      <description>maven 是什么？ java中第三方jar包的管理工具之一。其它语言中也有类似工具，例如C#中的Nuget(微软官方出品)，以及nodejs中自带的npm、yarn（FaceBook发布的）等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。
+ps: 使用IntelliJ IDEA 工具很轻松的创建了我的第一个maven demo 工程，主要练习如何配置本地路径下maven,并修改setting.</description>
     </item>
     
     <item>

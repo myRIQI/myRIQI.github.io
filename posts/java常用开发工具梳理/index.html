@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark"><head>
-    <title>  | Posts </title>
+    <title>  | JAVA常用开发工具梳理 </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,10 +29,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://myriqi.github.io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://myriqi.github.io/favicon-16x16.png">
 
-    <link rel="canonical" href="https://myriqi.github.io/posts/">
+    <link rel="canonical" href="https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://myriqi.github.io/posts/index.xml" title="Website of W.Z" />
     
     
     
@@ -53,8 +52,9 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://myriqi.github.io/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="一位野生码农"/>
+<meta name="twitter:title" content="JAVA常用开发工具梳理"/>
+<meta name="twitter:description" content="maven 是什么？ java中第三方jar包的管理工具之一。其它语言中也有类似工具，例如C#中的Nuget(微软官方出品)，以及nodejs中自带的npm、yarn（FaceBook发布的）等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。
+ps: 使用IntelliJ IDEA 工具很轻松的创建了我的第一个maven demo 工程，主要练习如何配置本地路径下maven,并修改setting."/>
 
 </head>
 <body><div class="sidebar animated fadeInDown ">
@@ -127,44 +127,56 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>JAVA常用开发工具梳理</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://myriqi.github.io/posts/java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%A2%B3%E7%90%86/" title="JAVA常用开发工具梳理">JAVA常用开发工具梳理</a>
-                                <div class="post-time"><span class="date"> Jan 31 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+            </div>
+
+            <h4 id="maven-是什么">maven 是什么？</h4>
+<p>java中第三方jar包的管理工具之一。其它语言中也有类似工具，例如C#中的Nuget(微软官方出品)，以及nodejs中自带的npm、yarn（FaceBook发布的）等等。maven国内使用时，需要自己搭建私服。概念还是类似于nodejs的npm注册淘宝的镜像地址，否则下载包会很慢。java类似的包管理工具还有 Gradle 等。maven还可以处理jar包的管理，还可以安装插件，支持项目打包、测试、部署。</p>
+<p>ps: 使用IntelliJ IDEA 工具很轻松的创建了我的第一个maven demo 工程，主要练习如何配置本地路径下maven,并修改setting.xml配置文件，并将maven下载地址指向内网或其它国内镜像地址。</p>
+<h4 id="spring-是什么">spring 是什么？</h4>
+<p>JAVA开发中的应用程序框架，简化JAVA EE <!-- raw HTML omitted -->(Java Platform Enterprise Edition,经过了解类似于C#中的.NET Framework)<!-- raw HTML omitted -->开发，轻量，开发的时候只需要关注业务逻辑实现。主要支持功能是：</p>
+<ul>
+<li>IoC容器  <!-- raw HTML omitted -->（Inversion of Control 一种编程思想：控制反转，负责控制对象的生命周期和对象间的关系）<!-- raw HTML omitted --></li>
+<li>DI  <!-- raw HTML omitted -->（ Dependency Injection 依赖注入，动态的提供某个它所需要的对象）<!-- raw HTML omitted --></li>
+<li>AOP支持 <!-- raw HTML omitted --> （Aspect-Oriented Programming，面向方面编程）<!-- raw HTML omitted --></li>
+<li>事务支持</li>
+<li>MVC开发 <!-- raw HTML omitted -->（model-view-controller 编程模式）<!-- raw HTML omitted --></li>
+</ul>
+<h4 id="spring-boot-是什么">spring boot 是什么？</h4>
+<p>spring boot 主要是让开发者能够快速使用spring应用程序，简化spring使用方法，直接使用spring时的大量配置工作去掉了。还提供了大量的第三方插件，比如Tomcat <!-- raw HTML omitted -->(Apache 软件基金会旗下的开源web应用服务器)<!-- raw HTML omitted -->等。</p>
+<h4 id="spring-cloud-是什么">spring cloud 是什么？</h4>
+<p>基于spring开发的微服务管理框架，相当于一个管家，把所有的微服务管理了起来，里面提供了各种组件，比如springCloudBus 管理微服务之间通讯的，springCloudCondfig 管理配置的，集中管理所有配置。</p>
+<h4 id="mybatis-是什么">mybatis 是什么？</h4>
+<p>一个数据持久化框架，半自动化ORM <!-- raw HTML omitted -->（Object Relational Mapping 关系数据库映射模型框架）<!-- raw HTML omitted --> 框架，灵活、易学，通过简单xml或配置，就能将类型、接口映射为数据库中的记录。
+基于maven项目，只需要在pom.xml <!-- raw HTML omitted --><!-- raw HTML omitted --> (Project Object Model 对象模型，maven管理工具的文件)中加入以下配置：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;dependency&gt;
+   &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+   &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+   &lt;version&gt;x.x.x&lt;/version&gt;
+ &lt;/dependency&gt;
+</code></pre></div><p>maven会自动进行安装的。</p>
+<h4 id="mysql-是什么">MySQL 是什么？</h4>
+<p>免费开源的传统关系型数据库，使用量比较大，优点是免费、稳定，支持SQL。</p>
+<h4 id="redis-是什么">redis 是什么？</h4>
+<p>免费开源、非关系型，运行在内存的数据库。一般场景下搭配其它数据库使用，虽然它能对数据进行持久化，但是因为在内存中运行，不能对海量数据进行高频次读写，适用的场景有限，所以搭配其它数据库使用，主要作为主数据库扩展使用。</p>
+<h4 id="其它">其它</h4>
+<p>JAVA入门教程可以看一下<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰大佬博客</a>，文字教程的看不进去的，也可以尝试去哔哩哔哩看视频教程。大佬写的教程不错，博客里也有其它教程，有兴趣的可以翻一翻。</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
                 
-            
-                <div class="listing-title">2019</div>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://myriqi.github.io/posts/debian9.6%E9%83%A8%E7%BD%B2docker%E5%B9%B6%E8%BF%90%E8%A1%8Cnginx%E4%B8%8Emongodb%E5%AE%B9%E5%99%A8/" title="Debian9.6部署Docker，并运行Nginx与MongoDB容器">Debian9.6部署Docker，并运行Nginx与MongoDB容器</a>
-                                <div class="post-time"><span class="date"> Jul 30 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://myriqi.github.io/posts/%E5%90%8C%E4%BA%8B%E5%B0%8F%E6%8B%BF/" title="同事小拿">同事小拿</a>
-                                <div class="post-time"><span class="date"> Jul 27 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-        </ul>
+            </div>
+        </div>
+
+        
     </div>
+
 
         </div>
     </div>
